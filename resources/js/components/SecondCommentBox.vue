@@ -1,11 +1,14 @@
 <template>
     <div>
         <div class="alert alert-secondary" role="alert">
+            <i><b>Username</b>:{{comment.username}}</i>
+            <br>
             {{comment.text}}
             <br>
             <span class="reply-link" @click="showNested=showNested ? false : true">
                 {{showNested ? 'Hide reply form' : 'Reply'}}
-            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="reply-link" @click="showAnswersMethod()">
                 {{showAnswers ? 'Hide answers' : 'Answers'}}
             </span> 
@@ -26,6 +29,7 @@
     import PostAction from './PostAction';
     import ThirdCommentBox from './ThirdCommentBox';
     import {CommentService} from '../services/comment-service';
+    
     export default {
         name:'SecondCommentBox',
         props:['comment'],

@@ -1,14 +1,13 @@
 <template>
     <div class="container">
-        <br>
-        <h1>Aloware Post Blog</h1>
-        <br>
-        <br>
+        <h1 class="main-title">Aloware Post Blog</h1>
         <div class="row">
             <div class="col-md-5">
+                <h3>Comment Form</h3>
                 <post-action @postComment="postComment"></post-action>
             </div>
             <div class="col-md-7">
+                <h3>Commnents</h3>
                 <comment :comments="comments"></comment>
             </div>
         </div>

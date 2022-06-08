@@ -1,11 +1,14 @@
 <template>
     <div>
         <div class="alert alert-primary" role="alert">
+            <i><b>Username</b>:{{comment.username}}</i>
+            <br>
             {{comment.text}}
             <br>
             <span class="reply-link" @click="showNested = showNested ? false : true">
                 {{showNested ? 'Hide reply form' : 'Reply'}}
-            </span> &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="reply-link" @click="showAnswersMethod()">
                 {{showAnswers ? 'Hide answers' : 'Answers'}}
             </span> 
@@ -15,7 +18,6 @@
             <div class="col offset-md-1 offset-sm-1 offset-1">
                 <div v-if="showAnswers" v-for="nestedComment in comments" :key="nestedComment.id">
                     <second-comment-box :comment="nestedComment">
-
                     </second-comment-box>
                 </div>
             </div>

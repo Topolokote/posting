@@ -8,6 +8,19 @@
 @import '~bootstrap/scss/bootstrap';
 
 .reply-link{
-    color: blue;
+    color: brown;
     cursor:pointer;
+}
+
+.reply-link:hover{
+    text-decoration: underline;
+}
+
+.card{
+    margin-bottom:10px;
+}
+
+.main-title{
+    margin-top:20px;
+    margin-bottom:20px;
 }

@@ -14,8 +14,12 @@ class CommentController extends Controller
             'text' => $request->text,
             'created_at' => date('Y-m-d H:i:s')
         ]);
+
         if($request->commentId)
-            DB::table('comments')->where('id',$commentId)->update(['comment_id'=> $request->commentId]);
+            DB::table('comments')
+            ->where('id',$commentId)
+            ->update(['comment_id'=> $request->commentId]);
+        
         return DB::table('comments')->where('id',$commentId)->get()[0];
     }
 
@@ -24,8 +28,10 @@ class CommentController extends Controller
         return DB::table('comments')
                 ->when($request->commentId,function($query,$commentId){
                     $query->where('comment_id',$commentId);
-                })->when(!$request->commentId,function($query,$commentId){
+                })
+                ->when(!$request->commentId,function($query,$commentId){
                     $query->whereNull('comment_id');
-                })->orderBy('created_at','desc')->get();
+                })
+                ->orderBy('created_at','desc')->get();
     }
 }
