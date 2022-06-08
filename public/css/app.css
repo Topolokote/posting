@@ -10288,3 +10288,9 @@ textarea.form-control-lg {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.comment-date {
+  font-size: 7pt;
+  color: gray;
+  float: right;
+}

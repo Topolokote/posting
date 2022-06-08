@@ -15,10 +15,11 @@ class CommentController extends Controller
             'created_at' => date('Y-m-d H:i:s')
         ]);
 
-        if($request->commentId)
+        if($request->commentId){
             DB::table('comments')
             ->where('id',$commentId)
             ->update(['comment_id'=> $request->commentId]);
+        }
         
         return DB::table('comments')->where('id',$commentId)->get()[0];
     }

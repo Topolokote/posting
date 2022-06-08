@@ -2,6 +2,7 @@
     <div>
         <div class="alert alert-secondary" role="alert">
             <i><b>Username</b>:{{comment.username}}</i>
+            <span class="comment-date">{{comment.created_at}}</span>
             <br>
             {{comment.text}}
             <br>
