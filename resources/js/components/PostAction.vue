@@ -12,7 +12,7 @@
                 <div class="col-md-7">
                     <div class="mb-3">
                         <label for="comment" class="form-label">Comment</label>
-                        <textarea class="form-control" id="comment" rows="3" placeholder="Type your comment" v-model="text">
+                        <textarea class="form-control" id="comment" rows="2" placeholder="Type your comment" v-model="text">
                         </textarea>
                     </div>
                     <button type="button" class="btn btn-primary" @click="postComment()" v-if="!loading">Post comment</button>

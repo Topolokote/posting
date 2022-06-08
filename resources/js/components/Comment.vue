@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-body">
             <div v-for="comment in comments" :key="comment.id">
-                <comment-box :comment="comment" :comments-length="comments.length">
+                <comment-box :comment="comment">
                 </comment-box>
             </div>
             <h3 v-if="comments.length==0">No comments</h3>
