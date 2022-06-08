@@ -10,7 +10,7 @@
             </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="reply-link" @click="showAnswersMethod()">
-                {{showAnswers ? 'Hide answers' : 'Answers'}}
+                {{showAnswers ? 'Hide answers' : 'Answers('+commentsLength+')'}}
             </span> 
         </div>
         <post-action v-if="showNested" :commentId="comment.id" @postComment="postComment"></post-action>
@@ -18,7 +18,6 @@
             <div class="col offset-md-1 offset-sm-1 offset-1">
                 <div v-if="showAnswers" v-for="nestedComment in comments" :key="nestedComment.id">
                     <third-comment-box :comment="nestedComment">
-
                     </third-comment-box>
                 </div>
             </div>
@@ -32,7 +31,7 @@
     
     export default {
         name:'SecondCommentBox',
-        props:['comment'],
+        props:['comment','commentsLength'],
         components:{
             PostAction,
             ThirdCommentBox
